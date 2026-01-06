@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>PLC Web Control</title>
+    <!-- Memuat library Socket.io untuk komunikasi WebSocket -->
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+</head>
+<body>
+
+<!-- Menampilkan kontrol untuk lampu 1, 2, dan 3 -->
+<h3>Kontrol Lampu PLC</h3>
+
+<label>
+    Lampu 1
+    <input type="checkbox" class="lamp" id="lamp1"> <!-- Checkbox untuk lampu 1 -->
+</label><br>
+
+<label>
+    Lampu 2
+    <input type="checkbox" class="lamp" id="lamp2"> <!-- Checkbox untuk lampu 2 -->
+</label><br>
+
+<label>
+    Lampu 3
+    <input type="checkbox" class="lamp" id="lamp3"> <!-- Checkbox untuk lampu 3 -->
+</label>
+
+<!-- Memuat file JavaScript untuk menghubungkan frontend dengan WebSocket -->
+<script src="{{ url_for('static', filename='js/socket.js') }}"></script>
+</body>
+</html>
