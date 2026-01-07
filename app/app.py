@@ -6,6 +6,7 @@ from flask_socketio import SocketIO
 from controllers.socket_controller import init_socket
 
 # Membuat instance Flask
+#print(__name__)
 app = Flask(__name__)
 
 # Membuat instance SocketIO untuk mendukung komunikasi real-time

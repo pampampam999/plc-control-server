@@ -6,7 +6,7 @@ def init_socket(socketio):
 
     # Event ketika client terhubung ke server (WebSocket connection)
     @socketio.on("connect")
-    def handle_connect():
+    def handle_connect(sid):
         # Mengirim state terkini dari PLC ke client yang terhubung
         socketio.emit("state_update", get_state())
 

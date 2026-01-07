@@ -1,12 +1,12 @@
 // Membuat koneksi WebSocket ke server
 const socket = io();
 
-// Menambahkan event listener untuk semua checkbox dengan class 'lamp' (lampu 1, 2, 3)
+// Menambahkan event listener untuk semua checkbox dengan class 'lamp' (lampu 1, 2, 3, dst.)
 document.querySelectorAll(".lamp").forEach(el => {
     el.addEventListener("change", () => {
-        // Mengirim event 'toggle' ke server ketika checkbox diubah
+        // Mengirimkan event 'toggle' ke server dengan ID lampu dan status terbaru checkbox
         socket.emit("toggle", {
-            lamp: el.id,  // ID lampu yang dikontrol (lamp1, lamp2, lamp3)
+            lamp: el.id,  // ID lampu (misalnya tugu1, umkma2)
             state: el.checked  // Status checkbox (ON/OFF)
         });
     });

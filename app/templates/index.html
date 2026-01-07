@@ -2,31 +2,80 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>PLC Web Control</title>
-    <!-- Memuat library Socket.io untuk komunikasi WebSocket -->
+    <title>PLC Web Control - Dashboard</title>
     <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+    <style>
+        /* Styling untuk setiap grup checkbox */
+        .group {
+            margin-bottom: 20px;
+        }
+
+        .group h3 {
+            margin-bottom: 10px;
+        }
+
+        .checkbox-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .checkbox-container label {
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        .checkbox-container input {
+            margin-right: 5px;
+        }
+    </style>
 </head>
 <body>
 
-<!-- Menampilkan kontrol untuk lampu 1, 2, dan 3 -->
-<h3>Kontrol Lampu PLC</h3>
+<h2>Kontrol Dashboard Lampu PLC</h2>
 
-<label>
-    Lampu 1
-    <input type="checkbox" class="lamp" id="lamp1"> <!-- Checkbox untuk lampu 1 -->
-</label><br>
+<!-- Tugu Group (8 checkbox) -->
+<div class="group">
+    <h3>Tugu</h3>
+    <div class="checkbox-container">
+        <label><input type="checkbox" class="lamp" id="tugu1"> Lampu 1</label>
+        <label><input type="checkbox" class="lamp" id="tugu2"> Lampu 2</label>
+        <label><input type="checkbox" class="lamp" id="tugu3"> Lampu 3</label>
+        <label><input type="checkbox" class="lamp" id="tugu4"> Lampu 4</label>
+        <label><input type="checkbox" class="lamp" id="tugu5"> Lampu 5</label>
+        <label><input type="checkbox" class="lamp" id="tugu6"> Lampu 6</label>
+        <label><input type="checkbox" class="lamp" id="tugu7"> Lampu 7</label>
+        <label><input type="checkbox" class="lamp" id="tugu8"> Lampu 8</label>
+    </div>
+</div>
 
-<label>
-    Lampu 2
-    <input type="checkbox" class="lamp" id="lamp2"> <!-- Checkbox untuk lampu 2 -->
-</label><br>
+<!-- UMKMA Group (7 checkbox) -->
+<div class="group">
+    <h3>UMKMA</h3>
+    <div class="checkbox-container">
+        <label><input type="checkbox" class="lamp" id="umkma1"> Lampu 1</label>
+        <label><input type="checkbox" class="lamp" id="umkma2"> Lampu 2</label>
+        <label><input type="checkbox" class="lamp" id="umkma3"> Lampu 3</label>
+        <label><input type="checkbox" class="lamp" id="umkma4"> Lampu 4</label>
+        <label><input type="checkbox" class="lamp" id="umkma5"> Lampu 5</label>
+        <label><input type="checkbox" class="lamp" id="umkma6"> Lampu 6</label>
+        <label><input type="checkbox" class="lamp" id="umkma7"> Lampu 7</label>
+    </div>
+</div>
 
-<label>
-    Lampu 3
-    <input type="checkbox" class="lamp" id="lamp3"> <!-- Checkbox untuk lampu 3 -->
-</label>
+<!-- UMKMB Group (5 checkbox) -->
+<div class="group">
+    <h3>UMKMB</h3>
+    <div class="checkbox-container">
+        <label><input type="checkbox" class="lamp" id="umkmb1"> Lampu 1</label>
+        <label><input type="checkbox" class="lamp" id="umkmb2"> Lampu 2</label>
+        <label><input type="checkbox" class="lamp" id="umkmb3"> Lampu 3</label>
+        <label><input type="checkbox" class="lamp" id="umkmb4"> Lampu 4</label>
+        <label><input type="checkbox" class="lamp" id="umkmb5"> Lampu 5</label>
+    </div>
+</div>
 
 <!-- Memuat file JavaScript untuk menghubungkan frontend dengan WebSocket -->
 <script src="{{ url_for('static', filename='js/socket.js') }}"></script>
+
 </body>
 </html>
